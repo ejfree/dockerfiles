@@ -2,12 +2,14 @@
 FROM nginx
 
 # install nginx
-#RUN apt-get update -y
+RUN apt-get update -y
 #RUN apt-get install -y python-software-properties
 #RUN apt-get install -y software-properties-common
 #RUN add-apt-repository -y ppa:nginx/stable
-RUN apt-get update -y
-RUN apt-get install -y nginx
+#RUN apt-get update -y
+#RUN apt-get install -y nginx
+RUN mkdir /etc/nginx/sites-available/
+RUN mkdir /etc/nginx/sites-enabled/
 
 # deamon mode off
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
