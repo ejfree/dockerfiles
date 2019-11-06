@@ -26,4 +26,4 @@ RUN ln -s /etc/nginx/sites-available/ntopng.nubevalabs.com /etc/nginx/sites-enab
 
 WORKDIR /etc/nginx
 
-CMD ["nginx”]
+CMD /usr/sbin/nginx
