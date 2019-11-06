@@ -10,6 +10,7 @@ RUN apt-get update -y
 #RUN apt-get install -y nginx
 RUN mkdir /etc/nginx/sites-available/
 RUN mkdir /etc/nginx/sites-enabled/
+COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 # deamon mode off
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
