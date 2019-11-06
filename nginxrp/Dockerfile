@@ -7,9 +7,6 @@ RUN mkdir /etc/nginx/sites-available/
 RUN mkdir /etc/nginx/sites-enabled/
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-# deamon mode off
-RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-
 # expose ports
 EXPOSE 80
 
