@@ -3,16 +3,14 @@ FROM nginx
 # install nginx
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN mkdir /etc/nginx/sites-available/
-RUN mkdir /etc/nginx/sites-enabled/
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+RUN mkdir /opt/nubevaTools
+COPY script/awsGenerateTLS.sh /opt/nubevaTools/awsGenerateTLS.sh
 
 # add nginx conf
 ADD conf/moloch.nubevalabs.com /etc/nginx/sites-available/moloch.nubevalabs.com
 
 
 
-WORKDIR /etc/nginx
+WORKDIR /opt/nubevaTools
 
-CMD /usr/sbin/nginx
-SAMPLE
+CMD /opt/nubevaTools/awsGenerateTLS.sh
