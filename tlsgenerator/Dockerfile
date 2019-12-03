@@ -1,13 +1,10 @@
-FROM nginx
+FROM alpine
 
-# install nginx
-RUN apt-get update -y
-RUN apt-get upgrade -y
+
+RUN apk update && apk add wget
 RUN mkdir /opt/nubevaTools
-COPY script/awsGenerateTLS.sh /opt/nubevaTools/awsGenerateTLS.sh
-
-# add nginx conf
-ADD conf/moloch.nubevalabs.com /etc/nginx/sites-available/moloch.nubevalabs.com
+RUN wget -O /opt/nubevaTools/awsGenerate.tls https://raw.githubusercontent.com/nubevalabs/NubevaTool
+s/master/awsGenereateTLS.sh
 
 
 
